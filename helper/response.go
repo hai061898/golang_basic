@@ -1,4 +1,4 @@
-package hepler
+package helper
 
 import "strings"
 
