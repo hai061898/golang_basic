@@ -2,7 +2,7 @@ package main
 
 import (
 	"api1/config"
-	controller "api1/controllers"
+    "api1/controllers"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
@@ -10,7 +10,7 @@ import (
 
 var (
 	db             *gorm.DB                  = config.SetupDatabaseConnection() 
-	authController controller.AuthController = controller.NewAuthController() 
+	authController controller.AuthController = controller.NewAuthController(authService, jwtService)
 )
 func main() {
 	defer config.CloseDatabaseConnection(db)
